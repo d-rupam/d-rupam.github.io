@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rupam Das | Bio-Digital Hub</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             background-color: #0d1117;
@@ -31,7 +32,7 @@
             font-size: 1.2rem;
         }
         .btn {
-            display: inline-block;
+            display: none; /* Hidden by default until verification */
             margin-top: 25px;
             padding: 10px 20px;
             color: #58a6ff;
@@ -45,6 +46,15 @@
             color: #0d1117;
             box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
         }
+        .turnstile-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        #status-text {
+            color: #ff7b72; /* Red color for awaiting clearance */
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -54,9 +64,30 @@
         <p>> Role: Microbiology Student & Systems Architect</p>
         <p>> Location: Dum Dum Motijheel College (WBSU)</p>
         <br>
-        <p><i>The digital vault is currently under construction...</i></p>
+        <p>> Security Protocol: <span id="status-text">Awaiting clearance...</span></p>
         
-        <a href="https://github.com/d-rupam" class="btn">Initialize Main Terminal</a>
+        <div class="turnstile-container">
+            <div class="cf-turnstile" 
+                 data-sitekey="0x4AAAAAADmmav-PDiBpGXou" 
+                 data-theme="dark" 
+                 data-callback="grantAccess">
+            </div>
+        </div>
+
+        <a href="https://github.com/d-rupam" class="btn" id="terminal-btn">Initialize Main Terminal</a>
     </div>
+
+    <script>
+        function grantAccess() {
+            
+            document.querySelector('.turnstile-container').style.display = 'none';
+        
+            const statusText = document.getElementById('status-text');
+            statusText.textContent = "Clearance Granted.";
+            statusText.style.color = "#3fb950"; // Green color
+            
+            document.getElementById('terminal-btn').style.display = 'inline-block';
+        }
+    </script>
 </body>
 </html>
