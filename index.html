@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupam Das | Bio-Digital Hub</title>
+    <title>Operon Cluster | Rupam Das</title>
+    
+    
     <link rel="icon" type="image/png" href="https://operon.rupamdas.in/capsid/R_v2.png">
+    <link rel="apple-touch-icon" href="https://operon.rupamdas.in/capsid/R_v2.png">
+    
+   
+    <meta property="og:title" content="Rupam Das // Operon Cluster">
+    <meta property="og:description" content="Central execution cluster, active scripts, and GitHub repositories for Rupam Das.">
+    <meta property="og:image" content="https://operon.rupamdas.in/capsid/R_v2.png">
+    <meta property="og:url" content="https://operon.rupamdas.in/">
+
+    <meta name="description" content="Operon - The central execution cluster for the Rupam Das architecture.">
+
+    
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
+    <!-- Google Analytics -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0KYK0PKV9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J0KYK0PKV9');
-</script>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0KYK0PKV9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-J0KYK0PKV9');
+    </script>
     
     <style>
         body {
@@ -28,57 +39,196 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
+
         .container {
-            border: 2px solid #30363d;
-            padding: 40px;
-            border-radius: 10px;
-            background-color: #161b22;
-            box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+            border: 1px solid #30363d;
+            padding: 35px;
+            border-radius: 8px;
+            background-color: rgba(22, 27, 34, 0.85);
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.15);
+            max-width: 680px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            backdrop-filter: blur(5px);
         }
+
         h1 {
             color: #58a6ff;
             letter-spacing: 2px;
+            font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+            margin-top: 0;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 15px;
+            text-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+            text-align: center;
+            white-space: nowrap;
+            padding-left: 2px;
         }
+
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+            word-wrap: break-word;
         }
-        .btn {
-            display: none; /* Hidden by default until verification */
-            margin-top: 25px;
-            padding: 10px 20px;
-            color: #58a6ff;
-            text-decoration: none;
-            border: 1px solid #58a6ff;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+
+        @media (min-width: 480px) {
+            p { font-size: 1.05rem; }
         }
-        .btn:hover {
-            background-color: #58a6ff;
-            color: #0d1117;
-            box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+
+        .highlight {
+            color: #3fb950;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(63, 185, 80, 0.4);
         }
+
+        .label {
+            color: #8b949e;
+            display: inline-block;
+            min-width: 130px;
+        }
+
+        
+        .definition-box {
+            background-color: #0d1117;
+            border-left: 3px solid #58a6ff;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        
+        .dna-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 35px auto;
+        }
+
+        .base-pair {
+            width: 2px;
+            height: 50px;
+            background: #30363d;
+            position: relative;
+            animation: spin 3s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        .base-pair::before, .base-pair::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            left: -4px;
+        }
+
+        .base-pair::before { 
+            top: -5px; 
+            background: #58a6ff; 
+            box-shadow: 0 0 8px #58a6ff;
+        }
+        
+        .base-pair::after { 
+            bottom: -5px; 
+            background: #3fb950; 
+            box-shadow: 0 0 8px #3fb950;
+        }
+
+        
+        .bp-1 { animation-delay: 0s; } .bp-2 { animation-delay: -0.15s; } .bp-3 { animation-delay: -0.3s; }
+        .bp-4 { animation-delay: -0.45s; } .bp-5 { animation-delay: -0.6s; } .bp-6 { animation-delay: -0.75s; }
+        .bp-7 { animation-delay: -0.9s; } .bp-8 { animation-delay: -1.05s; } .bp-9 { animation-delay: -1.2s; }
+        .bp-10 { animation-delay: -1.35s; } .bp-11 { animation-delay: -1.5s; } .bp-12 { animation-delay: -1.65s; }
+        .bp-13 { animation-delay: -1.8s; } .bp-14 { animation-delay: -1.95s; } .bp-15 { animation-delay: -2.1s; }
+        .bp-16 { animation-delay: -2.25s; } .bp-17 { animation-delay: -2.4s; } .bp-18 { animation-delay: -2.55s; }
+        .bp-19 { animation-delay: -2.7s; } .bp-20 { animation-delay: -2.85s; }
+
+        @keyframes spin {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(360deg); }
+        }
+
+        
         .turnstile-container {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
+            min-height: 65px; 
         }
+
         #status-text {
-            color: #ff7b72; /* Red color for awaiting clearance */
+            color: #ff7b72;
             font-style: italic;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .btn {
+            display: none; 
+            margin-top: 25px;
+            padding: 12px 20px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn:hover {
+            background-color: #79c0ff;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.6);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>[ Rupam Das ]</h1>
-        <p>> System Status: Online</p>
-        <p>> Role: Microbiology Student & Systems Architect</p>
-        <p>> Location: Dum Dum Motijheel College (WBSU)</p>
-        <p>> Security Protocol: <span id="status-text">Awaiting clearance...</span></p>
+    <main class="container">
+        <h1>Rupam Das // Operon Cluster</h1>
+        
+        
+        <div class="dna-container">
+            <div class="base-pair bp-1"></div><div class="base-pair bp-2"></div><div class="base-pair bp-3"></div>
+            <div class="base-pair bp-4"></div><div class="base-pair bp-5"></div><div class="base-pair bp-6"></div>
+            <div class="base-pair bp-7"></div><div class="base-pair bp-8"></div><div class="base-pair bp-9"></div>
+            <div class="base-pair bp-10"></div><div class="base-pair bp-11"></div><div class="base-pair bp-12"></div>
+            <div class="base-pair bp-13"></div><div class="base-pair bp-14"></div><div class="base-pair bp-15"></div>
+            <div class="base-pair bp-16"></div><div class="base-pair bp-17"></div><div class="base-pair bp-18"></div>
+            <div class="base-pair bp-19"></div><div class="base-pair bp-20"></div>
+        </div>
+
+        <p><span class="label">>> System State:</span> <span class="highlight">Online & Active</span></p>
+        <p><span class="label">>> Architect:</span> Rupam Das (WBSU)</p>
+        <p><span class="label">>> Function:</span> Central GitHub Repository Hub</p>
+        
+        <div class="definition-box">
+            <p style="color: #58a6ff; font-weight: bold; margin-top: 0;">>> BIOLOGICAL NOMENCLATURE:</p>
+            <p style="font-size: 0.95rem;">An <b>operon</b> is a functioning unit of genomic DNA containing a cluster of genes under the control of a single promoter.</p>
+            
+            <p style="color: #58a6ff; font-weight: bold; margin-top: 15px;">>> SYSTEM SIGNIFICANCE:</p>
+            <p style="font-size: 0.95rem;">The ultimate central cluster of active scripts, GitHub repositories, and web utilities executing together under a unified deployment pipeline.</p>
+        </div>
+
+        <p><span class="label">>> Protocol:</span> <span id="status-text">Awaiting clearance...</span></p>
+        
         
         <div class="turnstile-container">
             <div class="cf-turnstile" 
@@ -88,19 +238,26 @@
             </div>
         </div>
 
-        <a href="https://github.com/d-rupam" class="btn" id="terminal-btn">Initialize Main Terminal</a>
-    </div>
+        
+        <a href="https://axon.rupamdas.in/github" class="btn" id="terminal-btn">Initialize GitHub Terminal</a>
+    </main>
 
     <script>
         function grantAccess() {
             
-            document.querySelector('.turnstile-container').style.display = 'none';
+            const cfContainer = document.querySelector('.turnstile-container');
+            cfContainer.style.display = 'none';
         
-            const statusText = document.getElementById('status-text');
-            statusText.textContent = "Clearance Granted.";
-            statusText.style.color = "#3fb950"; // Green color
             
-            document.getElementById('terminal-btn').style.display = 'inline-block';
+            const statusText = document.getElementById('status-text');
+            statusText.textContent = "Clearance Granted. Link Decrypted.";
+            statusText.style.color = "#3fb950"; 
+            statusText.style.animation = "none"; 
+            statusText.style.textShadow = "0 0 5px rgba(63, 185, 80, 0.4)";
+            
+            
+            const terminalBtn = document.getElementById('terminal-btn');
+            terminalBtn.style.display = 'block';
         }
     </script>
 </body>
